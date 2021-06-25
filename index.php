@@ -100,25 +100,27 @@ include "includes/db.php";
                         </div>
                     </div>
                     <div class="row card_build">
+
+
                         <div class="col-lg-3 offset-2">
+                            <?php
+                            $query = "SELECT * FROM news";
+                            $select_news = mysqli_query($connection, $query);
+
+                            if(!$select_news){
+                                die('QUERY FAILED' . mysqli_error($connection));
+                            }
+
+                            while($row = mysqli_fetch_assoc($select_news)){
+                                $news_id =$row['news_id'];
+                                $news_title = $row['news_title'];
+                                $news_image = $row['news_image'];
+                                $news_content = $row['news_content'];
+                                $news_date = $row['news_date'];
+
+                                ?>
                             <div class="card" style="width: 16rem;">
 
-                                    <?php
-                                    $query = "SELECT * FROM news";
-                                    $select_news = mysqli_query($connection, $query);
-
-                                    if(!$select_news){
-                                        die('QUERY FAILED' . mysqli_error($connection));
-                                    }
-
-                                    while($row = mysqli_fetch_assoc($select_news)){
-                                        $news_id =$row['news_id'];
-                                        $news_title = $row['news_title'];
-                                        $news_image = $row['news_image'];
-                                        $news_content = $row['news_content'];
-                                        $news_date = $row['news_date'];
-
-                                    ?>
                                 <img src="images/<?=$news_image?>" class="card-img-top" alt="">
                                 <div class="card-body">
                                     <p class="mb-1"><?=$news_date?></p>
@@ -126,8 +128,9 @@ include "includes/db.php";
                                     <p class="card-text"><?=substr($news_content, 0, 200)?></p>
                                     <a href="#" class="btn  stretched-link">Подробнее</a>
                                 </div>
-                                    <?php } ?>
+
                             </div>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
