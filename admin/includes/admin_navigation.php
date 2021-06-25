@@ -68,13 +68,24 @@
                 </ul>
             </li>
             <li>
-                <a href="javascript:" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-briefcase"></i> Projects <i class="fa fa-fw fa-caret-down"></i></a>
+                <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i class="fa fa-fw fa-briefcase"></i> Projects <i class="fa fa-fw fa-caret-down"></i></a>
                 <ul id="demo1" class="collapse">
                     <li>
                         <a href="projects.php">View all projects</a>
                     </li>
                     <li>
                         <a href="projects.php?source=add_projects">Add projects</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:;" data-toggle="collapse" data-target="#demo2"><i class="fa fa-fw fa-users"></i> Admins <i class="fa fa-fw fa-caret-down"></i></a>
+                <ul id="demo2" class="collapse">
+                    <li>
+                        <a href="admins.php">View all admins</a>
+                    </li>
+                    <li>
+                        <a href="admins.php?source=add_admin">Create new admin</a>
                     </li>
                 </ul>
             </li>
