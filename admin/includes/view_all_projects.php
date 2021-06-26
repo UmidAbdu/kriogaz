@@ -30,9 +30,9 @@
         <td><?=$project_id?> </td>
         <td><?=$project_title?> </td>
         <td><img width="100" src="../images/<?=$project_image?>"></td>
-        <td><?=substr($project_content,0,200)?></td>
+        <td><?=substr($project_content,0,500)?></td>
         <td><?=$project_date?></td>
-        <td><a href="projects.php?source=edit_news&p_id=<?=$project_id?>">Edit</a></td>
+        <td><a href="projects.php?source=edit_projects&p_id=<?=$project_id?>">Edit</a></td>
         <td><a href="projects.php?delete=<?=$project_id?>">Delete</a></td>
     </tr>
     <?php
