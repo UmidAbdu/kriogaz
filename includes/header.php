@@ -13,7 +13,7 @@
 
 <body>
 <div class="container-fluid">
-    <header>
+    <header style="padding-bottom: 50px">
         <div class="row banner">
             <div class="col-lg-12">
                 <div class="row p-0">
@@ -34,7 +34,7 @@
                                             <a class="nav-link" href="about.php">О Компании</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" aria-current="page" href="../admin/index.php">Решения</a>
+                                            <a class="nav-link" aria-current="page" href="#">Решения</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="projects.php">Реализованные проекты</a>

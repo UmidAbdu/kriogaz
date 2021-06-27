@@ -1,6 +1,6 @@
 
 </section>
-<footer>
+<footer style="padding-top: 100px">
     <div class="row footer_A">
         <div class="col-6 offset-3 text-center">
             <ul class="navbar-nav w-100 justify-content-center flex-row  d-flex mb-2 mb-lg-0 p-2">

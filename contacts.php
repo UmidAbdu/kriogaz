@@ -73,6 +73,16 @@
             </div>
         </div>
         <div class="col-3  py-5" style="padding-right: 20px;">
+            <?php
+            // the message
+            $msg = "First line of text\nSecond line of text";
+
+            // use wordwrap() if lines are longer than 70 characters
+            $msg = wordwrap($msg,70);
+
+            // send email
+            mail("abdugaffarov23@gmail.com","My subject",$msg);
+            ?>
             <form>
                 <div class="contact_input">
                     <label class="my-2" id='in-1'>Имя</label>
@@ -91,7 +101,7 @@
                     <textarea rows="8" cols="20">
                         </textarea>
                 </div>
-                <button class="w-100 mt-4 p-3 text-white  btn btn-info" style="border-radius: 0px;font-weight: bold; letter-spacing: 1px;background-color: #2592f9;">Отправить письмо</button>
+                <input type="submit" value="Отправить письмо" class="w-100 mt-4 p-3 text-white  btn btn-info" style="border-radius: 0px;font-weight: bold; letter-spacing: 1px;background-color: #2592f9;">
             </form>
 
         </div>

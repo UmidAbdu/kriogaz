@@ -1,12 +1,12 @@
 <?php include "includes/header.php";
 include "includes/db.php";
 ?>
-<section style="padding-bottom:40px " class="d-flex justify-content-center align-items-center flex-column border border-danger">
+<section style="padding-bottom:40px " class="d-flex justify-content-center align-items-center flex-column">
     <div class="news_div">
         <h1 style="font-weight: bold;">Новости</h1>
     </div>
     <?php
-    $query = "SELECT * FROM news";
+    $query = "SELECT * FROM news ORDER BY news_id DESC";
     $select_news = mysqli_query($connection, $query);
 
     if(!$select_news){
@@ -25,7 +25,7 @@ include "includes/db.php";
         <img src="images/<?=$news_image?>">
         <div class="news_title">
             <p class="date"><?=$news_date?></p>
-            <a href="#">
+            <a href="post.php?p_id=<?=$news_id?>">
                <?=substr($news_content, 0, 250)?>
             </a>
         </div>

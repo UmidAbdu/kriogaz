@@ -76,15 +76,17 @@ include "includes/db.php";
                     <p>Актульные события</p>
                 </div>
                 <div class="col-lg-3">
-                    <button class="btn offset-1">
+                    <a href="news.php">
+                    <button class="btn btn-primary">
                         Все новости
                     </button>
+                    </a>
                 </div>
             </div>
-            <div class="row card_build">
+            <div class="row card_build" style="">
                 <div class="col-lg-9 d-flex justify-content-around offset-2">
                     <?php
-                    $query = "SELECT * FROM news LIMIT 3";
+                    $query = "SELECT * FROM news ORDER BY news_id DESC LIMIT 3 ";
                     $select_news = mysqli_query($connection, $query);
 
                     if(!$select_news){
@@ -100,13 +102,12 @@ include "includes/db.php";
 
                         ?>
                         <div class="card" style="width: 16rem;">
-
                             <img src="images/<?=$news_image?>" class="card-img-top" alt="">
                             <div class="card-body">
                                 <p class="mb-1"><?=$news_date?></p>
                                 <h5 class="card-title"><?=$news_title?></h5>
                                 <p class="card-text"><?=substr($news_content, 0, 200)?></p>
-                                <a href="#" class="btn  stretched-link">Подробнее</a>
+                                <a href="post.php?p_id=<?=$news_id?>" class="btn stretched-link">Подробнее</a>
                             </div>
                         </div>
                     <?php } ?>
