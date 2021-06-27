@@ -73,16 +73,6 @@
             </div>
         </div>
         <div class="col-3  py-5" style="padding-right: 20px;">
-            <?php
-            // the message
-            $msg = "First line of text\nSecond line of text";
-
-            // use wordwrap() if lines are longer than 70 characters
-            $msg = wordwrap($msg,70);
-
-            // send email
-            mail("abdugaffarov23@gmail.com","My subject",$msg);
-            ?>
             <form>
                 <div class="contact_input">
                     <label class="my-2" id='in-1'>Имя</label>

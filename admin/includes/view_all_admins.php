@@ -32,7 +32,7 @@
         <td><?=$admin_firstname?></td>
         <td><?=$admin_lastname?></td>
         <td><?=$admin_email?></td>
-        <td><a href="admins.php?source=edit_news&a_id=<?=$admin_id?>">Edit</a></td>
+        <td><a href="admins.php?source=edit_admin&a_id=<?=$admin_id?>">Edit</a></td>
         <td><a href="admins.php?delete=<?=$admin_id?>">Delete</a></td>
     </tr>
     <?php
