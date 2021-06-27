@@ -1,6 +1,7 @@
 <?php
+
 if(isset($_GET['p_id'])){
-    $the_project_id = $_GET['p_id'];
+    $the_project_id = escape($_GET['p_id']);
 
     $query = "SELECT * FROM projects WHERE project_id = $the_project_id";
     $select_project_id = mysqli_query($connection, $query);
@@ -17,12 +18,12 @@ if(isset($_GET['p_id'])){
 
 if(isset($_POST['update_project'])){
 
-    $project_title = $_POST['project_title'];
+    $project_title = escape($_POST['project_title']);
 
     $project_image = $_FILES['project_image']['name'];
     $project_image_temp = $_FILES['project_image']['tmp_name'];
 
-    $project_content = $_POST['project_content'];
+    $project_content = escape($_POST['project_content']);
 
     move_uploaded_file($project_image_temp, "../images/$project_image");
 

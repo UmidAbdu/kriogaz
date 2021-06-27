@@ -46,7 +46,8 @@
 
 if(isset($_GET['delete'])){
 
-    $the_news_id = $_GET['delete'];
+
+    $the_news_id = escape($_GET['delete']);
     $query = "DELETE FROM news WHERE news_id = {$the_news_id}";
     $delete_news_query = mysqli_query($connection, $query);
 

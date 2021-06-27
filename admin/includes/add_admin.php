@@ -1,11 +1,11 @@
 <?php
 if(isset($_POST['create_admin'])){
 
-    $admin_firstname = $_POST['admin_firstname'];
-    $admin_lastname = $_POST['admin_lastname'];
-    $admin_email = $_POST['admin_email'];
-    $admin_name = $_POST['admin_name'];
-    $admin_password = $_POST['admin_password'];
+    $admin_firstname = escape($_POST['admin_firstname']);
+    $admin_lastname = escape($_POST['admin_lastname']);
+    $admin_email = escape($_POST['admin_email']);
+    $admin_name = escape($_POST['admin_name']);
+    $admin_password = escape($_POST['admin_password']);
 
     $query = "INSERT INTO admins(admin_name, admin_password, admin_firstname, admin_lastname, admin_email ) ";
 

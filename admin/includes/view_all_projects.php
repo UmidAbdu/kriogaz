@@ -46,7 +46,8 @@
 
 if(isset($_GET['delete'])){
 
-    $the_project_id = $_GET['delete'];
+
+    $the_project_id = escape($_GET['delete']);
     $query = "DELETE FROM projects WHERE project_id = {$the_project_id}";
     $delete_project_query = mysqli_query($connection, $query);
 

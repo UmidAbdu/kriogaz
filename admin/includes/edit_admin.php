@@ -1,6 +1,7 @@
 <?php
+
 if(isset($_GET['a_id'])){
-    $the_admin_id = $_GET['a_id'];
+    $the_admin_id = escape($_GET['a_id']);
 
     $query = "SELECT * FROM admins WHERE admin_id = $the_admin_id";
     $select_admin_id = mysqli_query($connection, $query);
@@ -19,11 +20,11 @@ if(isset($_GET['a_id'])){
 
 if(isset($_POST['update_admin'])){
 
-    $admin_firstname = $_POST['admin_firstname'];
-    $admin_lastname = $_POST['admin_lastname'];
-    $admin_email = $_POST['admin_email'];
-    $admin_name = $_POST['admin_name'];
-    $admin_password = $_POST['admin_password'];
+    $admin_firstname = escape($_POST['admin_firstname']);
+    $admin_lastname = escape($_POST['admin_lastname']);
+    $admin_email = escape($_POST['admin_email']);
+    $admin_name = escape($_POST['admin_name']);
+    $admin_password = escape($_POST['admin_password']);
 
     $query = "UPDATE admins SET ";
     $query .= "admin_firstname = '{$admin_firstname}',";

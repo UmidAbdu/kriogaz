@@ -1,13 +1,13 @@
 <?php
 if(isset($_POST['create_news'])){
 
-    $news_title = $_POST['news_title'];
+    $news_title = escape($_POST['news_title']);
 
     $news_image = $_FILES['news_image']['name'];
     $news_image_temp = $_FILES['news_image']['tmp_name'];
 
-    $news_content = $_POST['news_content'];
-    $news_date = date('d-m-y');
+    $news_content = escape($_POST['news_content']);
+    $news_date = escape(date('d-m-y'));
 
     move_uploaded_file($news_image_temp, "../images/$news_image");
 

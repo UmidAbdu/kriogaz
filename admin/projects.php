@@ -1,5 +1,6 @@
 <?php include "includes/admin_header.php";
 include "../includes/db.php";
+include "functions.php";
 ?>
 
 <body>
@@ -25,7 +26,7 @@ include "../includes/db.php";
                     <?php
 
                     if(isset($_GET['source'])){
-                        $source = $_GET['source'];
+                        $source = escape($_GET['source']);
                     } else{
                         $source = '';
                     }

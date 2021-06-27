@@ -1,6 +1,7 @@
 <?php
+
 if(isset($_GET['n_id'])){
-    $the_news_id = $_GET['n_id'];
+    $the_news_id = escape($_GET['n_id']);
 
     $query = "SELECT * FROM news WHERE news_id = $the_news_id";
     $select_news_id = mysqli_query($connection, $query);
@@ -17,12 +18,12 @@ if(isset($_GET['n_id'])){
 
 if(isset($_POST['update_news'])){
 
-    $news_title = $_POST['news_title'];
+    $news_title = escape($_POST['news_title']);
 
     $news_image = $_FILES['news_image']['name'];
     $news_image_temp = $_FILES['news_image']['tmp_name'];
 
-    $news_content = $_POST['news_content'];
+    $news_content = escape($_POST['news_content']);
 
     move_uploaded_file($news_image_temp, "../images/$news_image");
 

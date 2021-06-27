@@ -1,13 +1,14 @@
 <?php
+
 if(isset($_POST['create_project'])){
 
-    $project_title = $_POST['project_title'];
+    $project_title = escape($_POST['project_title']);
 
     $project_image = $_FILES['project_image']['name'];
     $project_image_temp = $_FILES['project_image']['tmp_name'];
 
-    $project_content = $_POST['project_content'];
-    $project_date = date('d-m-y');
+    $project_content = escape($_POST['project_content']);
+    $project_date = escape(date('d-m-y'));
 
     move_uploaded_file($project_image_temp, "../images/$project_image");
 
