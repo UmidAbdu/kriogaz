@@ -26,7 +26,7 @@ include "includes/db.php";
             <img src="images/<?=$project_image?>">
             <div class="news_title">
                 <p class="date"><?=$project_date?></p>
-                <a href="#">
+                <a href="project.php?pr_id=<?=$project_id?>">
                     <?=substr($project_content, 0, 240)?>
                 </a>
             </div>

@@ -6,7 +6,7 @@ if(isset($_GET['pr_id'])){
 }
 
 //querying database
-$query = "SELECT * FROM news WHERE news_id = $the_project_id";
+$query = "SELECT * FROM projects WHERE project_id = $the_project_id ";
 $select_all_projects_query = mysqli_query($connection, $query);
 
 while($row = mysqli_fetch_assoc($select_all_projects_query)){
