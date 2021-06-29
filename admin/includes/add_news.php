@@ -42,9 +42,16 @@ if(isset($_POST['create_news'])){
 
     <div class="form-group">
         <label for="news_content">News Content</label>
-        <textarea class="form-control" name="news_content" id="" cols="30" rows="10"></textarea>
+        <textarea class="form-control" name="news_content" id="editor" cols="30" rows="10"></textarea>
     </div>
 
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
 
     <div class="form-group">
 
